@@ -161,14 +161,10 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
         TextView callerState;
         switch (state) {
             case IDLE:
-                EditText phoneNumberText = (EditText) findViewById(R.id.call_text);
-                String phoneNum = phoneNumberText.getText().toString();
-                setContentView(R.layout.call);
                 TextView callerName = (TextView) findViewById(R.id.caller_name);
                 callerState = (TextView) findViewById(R.id.caller_state);
-                callerName.setText(phoneNum);
+                callerName.setText(this.phoneNumber);
                 callerState.setText(title);
-                makeCall(phoneNum);
                 break;
             case RINGING:
                 setContentView(R.layout.call);
@@ -295,8 +291,7 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
         tick = 0;
     }
 
-    private void makeCall(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    private void makeCall() {
         Outgoing outgoing = ((NeivorCallsAplication) getApplication()).backend().getOutgoing();
         findViewById(R.id.progressBar).setVisibility(View.GONE);
         if (outgoing != null) {
@@ -311,7 +306,6 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
             Toast.makeText(this, Constants.OUTGOING_CALL_DIAL_HINT, Toast.LENGTH_SHORT).show();
             return;
         }
-        showOutCallUI(STATE.IDLE, null);
     }
 
     public void onClickBtnEndCall(View view) {
@@ -483,7 +477,8 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
     public void onLogin(boolean success) {
         runOnUiThread(() -> {
             if (success) {
-                makeCall("+34610819927");
+                setContentView(R.layout.call);
+                makeCall();
             } else {
                 Toast.makeText(this, R.string.login_failed, Toast.LENGTH_SHORT).show();
             }
