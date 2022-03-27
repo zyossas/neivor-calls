@@ -173,6 +173,8 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
                 setContentView(R.layout.call);
                 callerState = findViewById(R.id.caller_state);
                 callerState.setText(Constants.RINGING_LABEL);
+                TextView callerNameTextView = findViewById(R.id.caller_name);
+                callerNameTextView.setText(this.callerName);
                 break;
             case ANSWERED:
                 startTimer();
@@ -458,8 +460,6 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
                     }
                 }
             } else {
-                ((AppCompatTextView) findViewById(R.id.logging_in_label)).setText(Constants.LOGGED_IN_LABEL);
-                ((AppCompatTextView) findViewById(R.id.logged_in_as)).setText(Utils.USERNAME);
                 findViewById(R.id.call_btn).setEnabled(true);
 
                 if (data != null) {
