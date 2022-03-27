@@ -293,7 +293,6 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
 
     private void makeCall() {
         Outgoing outgoing = ((NeivorCallsAplication) getApplication()).backend().getOutgoing();
-        findViewById(R.id.progressBar).setVisibility(View.GONE);
         if (outgoing != null) {
             outgoing.call(this.phoneNumber);
         }
