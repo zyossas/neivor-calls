@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "566545089103",
+    "firebase_url": "https://neivor-4cbf4.firebaseio.com",
+    "project_id": "neivor-4cbf4",
+    "storage_bucket": "neivor-4cbf4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566545089103:android:079d428e9e5dc10771203a",
+        "android_client_info": {
+          "package_name": "co.zyos.neivor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566545089103-1fllnulpdp0l847ja4rrs7f3bkv5abid.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.zyos.neivor",
+            "certificate_hash": "254711cadd61adc02d3588a32296713f2a3c8c4a"
+          }
+        },
+        {
+          "client_id": "566545089103-4lnje7kiajt66rrmrqe8rsrk7227bnia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKG7CJnOn2Xa27ligJy8_lf6skXazaymg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566545089103-4lnje7kiajt66rrmrqe8rsrk7227bnia.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "566545089103-oor0m4e42n6qej6ooi90tmpnvkl9vp3s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "neivor.id"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566545089103:android:81ce35b2069ec23671203a",
+        "android_client_info": {
+          "package_name": "neivor.id"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566545089103-5l7jr1tth8epubirhen6p39ait9g0t23.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "neivor.id",
+            "certificate_hash": "074f1137ea83f6da8595686c551c4a898f602665"
+          }
+        },
+        {
+          "client_id": "566545089103-d80cec74desb154gm9ojd6o3sdg5e9pg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "neivor.id",
+            "certificate_hash": "254711cadd61adc02d3588a32296713f2a3c8c4a"
+          }
+        },
+        {
+          "client_id": "566545089103-4lnje7kiajt66rrmrqe8rsrk7227bnia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKG7CJnOn2Xa27ligJy8_lf6skXazaymg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566545089103-4lnje7kiajt66rrmrqe8rsrk7227bnia.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "566545089103-oor0m4e42n6qej6ooi90tmpnvkl9vp3s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "neivor.id"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566545089103:android:c7403870b258ad4171203a",
+        "android_client_info": {
+          "package_name": "neivor.id.calls"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566545089103-4lnje7kiajt66rrmrqe8rsrk7227bnia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKG7CJnOn2Xa27ligJy8_lf6skXazaymg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566545089103-4lnje7kiajt66rrmrqe8rsrk7227bnia.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "566545089103-oor0m4e42n6qej6ooi90tmpnvkl9vp3s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "neivor.id"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
