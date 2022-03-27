@@ -51,6 +51,7 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
     private Object callData;
     private Vibrator vibrator;
     private String phoneNumber;
+    private String callerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +71,11 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
         if (getIntent().hasExtra("username")) {
             Utils.setUsername(getIntent().getStringExtra("username"));
         }
-
         if (getIntent().hasExtra("password")) {
             Utils.setPassword(getIntent().getStringExtra("password"));
+        }
+        if (getIntent().hasExtra("callerName")) {
+            callerName = getIntent().getStringExtra("callerName");
         }
     }
 
@@ -161,14 +164,14 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
         TextView callerState;
         switch (state) {
             case IDLE:
-                TextView callerName = (TextView) findViewById(R.id.caller_name);
-                callerState = (TextView) findViewById(R.id.caller_state);
+                TextView callerName = findViewById(R.id.caller_name);
+                callerState = findViewById(R.id.caller_state);
                 callerName.setText(this.phoneNumber);
                 callerState.setText(title);
                 break;
             case RINGING:
                 setContentView(R.layout.call);
-                callerState = (TextView) findViewById(R.id.caller_state);
+                callerState = findViewById(R.id.caller_state);
                 callerState.setText(Constants.RINGING_LABEL);
                 break;
             case ANSWERED:
@@ -198,8 +201,6 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
                 EditText phoneNumberText = (EditText) findViewById(R.id.call_text);
                 String phoneNum = phoneNumberText.getText().toString();
                 setContentView(R.layout.call);
-                TextView callerName = (TextView) findViewById(R.id.caller_name);
-                callerName.setText(phoneNum);
                 startTimer();
                 break;
 
@@ -275,7 +276,7 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
                     int minutes = (int) TimeUnit.SECONDS.toMinutes(tick -= TimeUnit.HOURS.toSeconds(hours));
                     int seconds = (int) (tick - TimeUnit.MINUTES.toSeconds(minutes));
                     String text = hours > 0 ? String.format(HH_MM_SS, hours, minutes, seconds) : String.format(MM_SS, minutes, seconds);
-                    TextView timerTextView = (TextView) findViewById(R.id.caller_state);
+                    TextView timerTextView = findViewById(R.id.caller_state);
                     if (timerTextView != null) {
                         timerTextView.setVisibility(View.VISIBLE);
                         timerTextView.setText(text);
@@ -323,8 +324,10 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
         if (callData != null) {
             if (callData instanceof Outgoing) {
                 ((Outgoing) callData).hangup();
+                finish();
             } else {
                 ((Incoming) callData).hangup();
+                finish();
             }
         }
     }
@@ -477,6 +480,8 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
         runOnUiThread(() -> {
             if (success) {
                 setContentView(R.layout.call);
+                TextView callerNameTextView = findViewById(R.id.caller_name);
+                callerNameTextView.setText(callerName);
                 makeCall();
             } else {
                 Toast.makeText(this, R.string.login_failed, Toast.LENGTH_SHORT).show();
