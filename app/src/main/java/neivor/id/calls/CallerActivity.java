@@ -28,7 +28,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.PermissionChecker;
 
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.plivo.endpoint.Incoming;
 import com.plivo.endpoint.Outgoing;
 
@@ -144,8 +144,8 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
                 showInCallUI(STATE.RINGING, Utils.getIncoming());
             }
         } else {
-            FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(this, instanceIdResult ->
-                    ((NeivorCallsAplication) getApplication()).backend().login(instanceIdResult.getToken()));
+            FirebaseMessaging.getInstance().getToken().addOnSuccessListener(this, instanceIdResult ->
+                    ((NeivorCallsAplication) getApplication()).backend().login(instanceIdResult));
         }
     }
 
