@@ -171,6 +171,7 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
                 makeCall(phoneNum);
                 break;
             case RINGING:
+                setContentView(R.layout.call);
                 callerState = (TextView) findViewById(R.id.caller_state);
                 callerState.setText(Constants.RINGING_LABEL);
                 break;
