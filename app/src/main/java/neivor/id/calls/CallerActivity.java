@@ -57,12 +57,23 @@ public class CallerActivity extends AppCompatActivity implements PlivoBackEnd.Ba
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caller);
         vibrator = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        getIntentData();
+        requestPermissions();
+    }
+
+    private void getIntentData() {
         if (getIntent().hasExtra("phoneNumber")) {
             phoneNumber = getIntent().getStringExtra("phoneNumber");
         } else {
             phoneNumber = "";
         }
-        requestPermissions();
+        if (getIntent().hasExtra("username")) {
+            Utils.setUsername(getIntent().getStringExtra("username"));
+        }
+
+        if (getIntent().hasExtra("password")) {
+            Utils.setPassword(getIntent().getStringExtra("password"));
+        }
     }
 
     private void requestPermissions() {

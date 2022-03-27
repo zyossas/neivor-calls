@@ -9,8 +9,8 @@ import java.util.HashMap;
 
 public class Utils {
     // endpoint username & password
-    static final String USERNAME = "neivorcall48685661570804622164513";
-    static final String PASSWORD = "(5WTHfbfy2y6Dmc8)";
+    static String USERNAME = "";
+    static String PASSWORD = "";
 
     static final String HH_MM_SS = "%02d:%02d:%02d";
     static final String MM_SS = "%02d:%02d";
@@ -30,6 +30,14 @@ public class Utils {
         context = (Context) options.get("sharedContext");
         mSharedPreferences = context.getSharedPreferences("plivo_refs", Context.MODE_PRIVATE);
         return mSharedPreferences.getString("token", "");
+    }
+
+    static void setUsername(String username) {
+        USERNAME = username;
+    }
+
+    static void setPassword(String password) {
+        PASSWORD = password;
     }
 
     static void setDeviceToken(String newDeviceToken) {
